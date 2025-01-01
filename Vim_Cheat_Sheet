@@ -1,0 +1,85 @@
+
+cmd : vim ~/.vimrc : this will open the file that you can set all configs inside:
+		set numbers
+		set relativenumbers
+		set mouse=a
+
+
+
+Moving:
+	h: left arrow
+	j: down arrow
+	k: up arrow
+	l: right arrow
+	you can combine numbers with these commands so you can duplicate them as: 10+j = move 10 lines down
+
+
+Visual mode (active by press "v" while in command mode)
+	- Arrows: you can now highlight the text by navigation
+	- y : yank = copy the selected word/s
+	- p : past after the cursor
+	- P : past before the cursor
+	- d : deletion
+
+
+normal (command) mode:
+	u : undo
+	Ctr + r : redo
+	dd : delete the whole line without exit command mode, also its technically a cut command so you can past that line somewhere else
+	cc : delete the whole line and active insert mode
+	D : delete the rest of the line after the cursor
+	C : changes the rest of the line : delete the rest of the line and activate the insert mode
+	(number) + dd : delete that how many lines = 5dd = will delete 5 lines
+	yy : copy the whole line, then go to any line 
+	p: past under the selected line
+	p + (number)  : copy n multiple lines
+	P: past above the line
+	r : replace the highlighted character while in normal mode
+	w : jump to next word
+	W :  advanced (w)
+	b : jump to previous word
+	B :  advanced (b)
+	e : jump to the end of the current word
+	0 : jump to the start of the line without insert mode
+	$ : jump to the end of the line without insert mode
+	% : jump to the end of the either {} or (), so the cursor should be at one of them
+	gg : go to the beginning of the file
+	G : go to the end of the file
+	(number) + G : jumb to that specific line
+	:number : jumo to that specific line
+
+
+combinations:
+	dw : delete the next word, or (dW), if the cursor was inside the word -> delete the rest of this word
+	diw : delete inside the word (the whole word)
+	2dw, d2w : delete the next 2 words
+	ciw : change inside the word =  delete the current word then active insert mode
+	ci" : change inside the quotation marks
+	ci( : change inside the ( )
+	yi" : copy what inside the quotation marks
+	d0 : delete everything from the current cursor til the beginning of the line
+	d$ : delete everything from the current cursor till the end of the line 
+	d% : delete everything that is between the {} or (), cursor should be on one of them
+	t + symbol : jump to one position before that symbol at the end of the line
+	T + symbol : jump to one position after that symbol at the start of the line
+	dt( : delete everything till the ( symbol
+	yt( : copy everything till (   ->  then you can past it using  p
+
+
+Identation:
+	>> : indent to the right
+	<< : indent to the left
+	== : auto indentation
+
+search:
+	/ + (word) = search for that word	, then you can press (n) -> go to the next one	 || 	(N)  -> go to the previous one
+	? + (word) = will do what ever the previous command do but in reverse order
+	put the cursor on a word then press (#), so you can find the previous occurrence   ->    "#" or "n"
+	put the cursor on a word then press (*), so you can find the next occurrence   ->    "*" or "n"
+ 	
+More commands
+	zz = will center that line to be in the middle of screen, Centering the file
+	:%s/var_one/var_two/g : this will (s) substitute "var_two" with "var_one" in the (%) whole file
+	in visual mode, select part of the file then 	-> 	:s/var_one/var_two/g  
+	"." :  the dot to repeat the last command like "dd", or (dt")  then the dot "."  -> this will repeat the deletion of part of the line till the " in another file location when press "."
+	
